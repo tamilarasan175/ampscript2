@@ -1,0 +1,14 @@
+%%[
+SET @fName = [FirstName]
+SET @totalBlance = [Balance Points]
+SET @eventName = [Event Name]
+SET @loyalty = [Loyalty Tier]
+SET @eventURL = [Event URL]
+SET @fTrim = Trim(@fName)
+SET @properFname = Propercase(@fTrim)
+SET @formatBalance = FormatNumber(@totalBlance, "#,###")
+SET @capsEvent = Uppercase(@eventName)
+SET @lowerLoyalty = Lowercase(@loyalty)
+SET @oneVariable = CONCAT("Hey ",@properFname, "! Don't miss out on the", @capsEvent, "happening in the next 3 days. Attend the event and earn 250 balance points towards your" @lowerLoyalty, "membership! You current have", @formatBalance, "balance points. Tap ", @eventURL, "for more details" )
+]%%
+%%=v(@oneVariable)=%%
